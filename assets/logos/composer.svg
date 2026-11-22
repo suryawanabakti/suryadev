@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="composerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F28D1A"/>
+      <stop offset="100%" stop-color="#885630"/>
+    </linearGradient>
+  </defs>
+  <!-- Composer Conductor Silhouette -->
+  <circle cx="64" cy="64" r="56" fill="#1C1E24" stroke="#F28D1A" stroke-width="3"/>
+  <g fill="url(#composerGrad)">
+    <!-- Conductor Head & Hair -->
+    <circle cx="64" cy="42" r="14"/>
+    <path d="M50 42c0-8 6-14 14-14s14 6 14 14c0 3-1 6-3 8-5-2-9-2-11-2s-6 0-11 2c-2-2-3-5-3-8z"/>
+    <!-- Tuxedo / Torso -->
+    <path d="M42 66c0 0 12 24 22 24s22-24 22-24l-8 38H50l-8-38z"/>
+    <!-- Baton -->
+    <line x1="84" y1="56" x2="106" y2="34" stroke="#F28D1A" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

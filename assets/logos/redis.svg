@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="redisTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D83B2F"/>
+      <stop offset="100%" stop-color="#B8261C"/>
+    </linearGradient>
+    <linearGradient id="redisLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A51F17"/>
+      <stop offset="100%" stop-color="#80150F"/>
+    </linearGradient>
+    <linearGradient id="redisRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EE4437"/>
+      <stop offset="100%" stop-color="#CC2E22"/>
+    </linearGradient>
+  </defs>
+  <!-- Redis Isometric Database Layer Cube -->
+  <g transform="translate(64, 64) scale(0.9) translate(-64, -64)">
+    <!-- Top Face -->
+    <polygon points="64,18 112,42 64,66 16,42" fill="url(#redisTop)"/>
+    <!-- Right Face -->
+    <polygon points="64,66 112,42 112,94 64,118" fill="url(#redisRight)"/>
+    <!-- Left Face -->
+    <polygon points="64,66 16,42 16,94 64,118" fill="url(#redisLeft)"/>
+    
+    <!-- Cutout cubes / highlights for Redis layer details -->
+    <ellipse cx="64" cy="42" rx="14" ry="7" fill="#FFFFFF" opacity="0.3"/>
+    <ellipse cx="64" cy="42" rx="7" ry="3.5" fill="#FFFFFF" opacity="0.5"/>
+  </g>
+</svg>

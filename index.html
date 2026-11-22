@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuryaDev — Everything Developers Need. One Powerful Environment.</title>
+  <meta name="description" content="SuryaDev adalah aplikasi local web server & database management suite modern untuk Windows. Alternatif Laragon, XAMPP, dan Herd bertenaga Rust dengan auto-virtual host dan visual database studio.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Gradients & Noise Grid -->
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-2"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- ========================================================================= -->
+  <!-- NAVBAR                                                                    -->
+  <!-- ========================================================================= -->
+  <header class="navbar-wrapper">
+    <nav class="navbar container">
+      <a href="#" class="nav-brand">
+        <img src="assets/logo.png" alt="SuryaDev Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">SuryaDev</span>
+          <span class="brand-badge">v0.1.2</span>
+        </div>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#showcase" class="nav-link">Tampilan Aplikasi</a>
+        <a href="#features" class="nav-link">Fitur Utama</a>
+        <a href="#database" class="nav-link">Database Studio</a>
+        <a href="#autovhost" class="nav-link">Auto Virtual Host</a>
+        <a href="#comparison" class="nav-link">Perbandingan</a>
+        <a href="#about" class="nav-link">Tentang Pembuat</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher Button -->
+        <button id="themeToggle" class="btn-icon" title="Ubah Tema Light / Dark" aria-label="Toggle Theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <a href="#download" class="btn btn-primary nav-download-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+          <span>Download Free</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="mobileMenuBtn" class="mobile-toggle" aria-label="Buka Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION                                                              -->
+  <!-- ========================================================================= -->
+  <section class="hero-section container">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span class="badge-text">Next-Gen Local Web Server & Database Suite for Windows</span>
+    </div>
+
+    <h1 class="hero-title">
+      Everything Developers Need.<br>
+      <span class="gradient-text">One Powerful Environment.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Alternatif modern, super kencang, dan elegan pengganti XAMPP, Laragon, dan Herd. Ditenagai performa native <strong>Rust</strong>, manajemen multi-runtime (PHP, Nginx, Apache, MySQL, Postgres, Redis), auto virtual host pintar ala Laragon, dan workspace database visual bawaan.
+    </p>
+
+    <div class="hero-cta-group">
+      <a href="SuryaDev_0.1.2_x64-setup.exe" class="btn btn-cta-primary download-trigger" download>
+        <div class="btn-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+        </div>
+        <div class="btn-text-wrapper">
+          <span class="btn-headline">Download Setup SuryaDev</span>
+          <span class="btn-subheadline">v0.1.2 • Windows 10/11 64-bit • 8.6 MB</span>
+        </div>
+      </a>
+
+      <a href="#showcase" class="btn btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span>Lihat Tampilan Aplikasi</span>
+      </a>
+    </div>
+
+    <!-- Tech Stack Mini Badges -->
+    <div class="hero-runtimes">
+      <span class="runtimes-label">Didukung Mesin Runtime Resmi:</span>
+      <div class="runtime-chips">
+        <div class="chip" title="Nginx FastCGI Engine"><img src="assets/logos/nginx.svg" alt="Nginx"> Nginx</div>
+        <div class="chip" title="Multi PHP (8.1, 8.2, 8.3, 8.4)"><img src="assets/logos/php.svg" alt="PHP"> PHP 8.1 - 8.4</div>
+        <div class="chip" title="MySQL Database Server"><img src="assets/logos/mysql.svg" alt="MySQL"> MySQL</div>
+        <div class="chip" title="PostgreSQL Advanced Cluster"><img src="assets/logos/postgresql.svg" alt="PostgreSQL"> PostgreSQL</div>
+        <div class="chip" title="Redis Cache & Queue Server"><img src="assets/logos/redis.svg" alt="Redis"> Redis</div>
+        <div class="chip" title="Apache HTTP Server"><img src="assets/logos/apache.svg" alt="Apache"> Apache</div>
+        <div class="chip" title="SQLite Embedded DB"><img src="assets/logos/sqlite.svg" alt="SQLite"> SQLite</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- APP SLIDESHOW / INTERACTIVE SHOWCASE (BELOW HERO)                         -->
+  <!-- ========================================================================= -->
+  <section class="app-showcase-section container" id="showcase">
+    <div class="showcase-header text-center">
+      <div class="showcase-badge">
+        <span class="badge-dot"></span>
+        <span>TUR VISUAL APLIKASI &bull; NATIVE WINDOWS 11</span>
+      </div>
+      <h2 class="section-title">Lihat SuryaDev Beraksi di Desktop Anda</h2>
+      <p class="section-desc">
+        Jelajahi antarmuka native yang bersih, cepat, dan intuitif. Dirancang dari nol dengan Rust dan Tauri untuk memberikan kenyamanan maksimal bagi para pengembang web di Windows.
+      </p>
+    </div>
+
+    <!-- 5 Tab Buttons representing the 5 slides -->
+    <div class="showcase-tabs" role="tablist">
+      <button class="showcase-tab active" data-slide="0" role="tab" aria-selected="true">
+        <div class="tab-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <div class="tab-text">
+          <span class="tab-title">Developer Environment</span>
+          <span class="tab-desc">Dashboard & Services</span>
+        </div>
+      </button>
+
+      <button class="showcase-tab" data-slide="1" role="tab" aria-selected="false">
+        <div class="tab-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <div class="tab-text">
+          <span class="tab-title">Database Management</span>
+          <span class="tab-desc">ERD & Query Workspace</span>
+        </div>
+      </button>
+
+      <button class="showcase-tab" data-slide="2" role="tab" aria-selected="false">
+        <div class="tab-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="tab-text">
+          <span class="tab-title">Redis & JS Runtimes</span>
+          <span class="tab-desc">Cache, Node.js & Bun</span>
+        </div>
+      </button>
+
+      <button class="showcase-tab" data-slide="3" role="tab" aria-selected="false">
+        <div class="tab-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="tab-text">
+          <span class="tab-title">Developer Utilities</span>
+          <span class="tab-desc">Port, JWT & Decoders</span>
+        </div>
+      </button>
+
+      <button class="showcase-tab" data-slide="4" role="tab" aria-selected="false">
+        <div class="tab-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="tab-text">
+          <span class="tab-title">PHP & Ekstensi</span>
+          <span class="tab-desc">FastCGI & Modules</span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Window Frame Mockup -->
+    <div class="showcase-window" id="showcaseWindow">
+      <!-- Title Bar -->
+      <div class="window-titlebar">
+        <div class="titlebar-left">
+          <div class="window-traffic-lights">
+            <span class="light red" title="Close"></span>
+            <span class="light yellow" title="Minimize"></span>
+            <span class="light green" title="Maximize"></span>
+          </div>
+          <div class="titlebar-title">
+            <img src="assets/logo.png" alt="SuryaDev Icon" class="titlebar-logo">
+            <span id="windowTitleText">SuryaDev &mdash; Developer Environment (Core Engine)</span>
+          </div>
+        </div>
+
+        <div class="titlebar-right">
+          <span class="window-engine-badge">
+            <span class="live-dot"></span>
+            <span>Tauri 2 + Rust Native</span>
+          </span>
+          <button id="zoomModalBtn" class="btn-zoom-preview" title="Lihat Resolusi Penuh" aria-label="Perbesar Screenshot">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            <span>Zoom Resolusi Penuh</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Slide Viewport -->
+      <div class="showcase-viewport">
+        <!-- Navigation Arrows -->
+        <button class="carousel-arrow prev-arrow" id="slidePrevBtn" aria-label="Slide Sebelumnya" title="Slide Sebelumnya (Arrow Left)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-arrow next-arrow" id="slideNextBtn" aria-label="Slide Selanjutnya" title="Slide Selanjutnya (Arrow Right)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <!-- Slides Track -->
+        <div class="slides-track" id="slidesTrack">
+          <!-- Slide 1 -->
+          <div class="slide-item active" data-index="0" data-src="assets/slide1.png">
+            <div class="slide-img-wrapper">
+              <img src="assets/slide1.png" alt="SuryaDev Developer Environment Dashboard" class="slide-img" loading="eager">
+              <div class="slide-overlay-hint">
+                <span class="hint-pill">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Klik untuk Zoom Gambar High-Res
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide-item" data-index="1" data-src="assets/slide2.png">
+            <div class="slide-img-wrapper">
+              <img src="assets/slide2.png" alt="SuryaDev Database Management & ERD Designer" class="slide-img" loading="lazy">
+              <div class="slide-overlay-hint">
+                <span class="hint-pill">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Klik untuk Zoom Gambar High-Res
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide-item" data-index="2" data-src="assets/slide3.png">
+            <div class="slide-img-wrapper">
+              <img src="assets/slide3.png" alt="SuryaDev Redis & JavaScript Runtimes" class="slide-img" loading="lazy">
+              <div class="slide-overlay-hint">
+                <span class="hint-pill">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Klik untuk Zoom Gambar High-Res
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slide-item" data-index="3" data-src="assets/slide4.png">
+            <div class="slide-img-wrapper">
+              <img src="assets/slide4.png" alt="SuryaDev Developer Utilities" class="slide-img" loading="lazy">
+              <div class="slide-overlay-hint">
+                <span class="hint-pill">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Klik untuk Zoom Gambar High-Res
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="slide-item" data-index="4" data-src="assets/slide5.png">
+            <div class="slide-img-wrapper">
+              <img src="assets/slide5.png" alt="SuryaDev PHP Version & Extension Manager" class="slide-img" loading="lazy">
+              <div class="slide-overlay-hint">
+                <span class="hint-pill">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Klik untuk Zoom Gambar High-Res
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Progress Bar -->
+      <div class="showcase-controls">
+        <div class="controls-status">
+          <span class="slide-counter"><strong id="currentSlideIndex">1</strong> / 5</span>
+          <span class="slide-tagline" id="slideTagline">Core Engine & Multi-Service Orchestrator</span>
+        </div>
+
+        <div class="showcase-dots" id="showcaseDots">
+          <button class="dot-btn active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="dot-btn" data-slide="1" aria-label="Slide 2"></button>
+          <button class="dot-btn" data-slide="2" aria-label="Slide 3"></button>
+          <button class="dot-btn" data-slide="3" aria-label="Slide 4"></button>
+          <button class="dot-btn" data-slide="4" aria-label="Slide 5"></button>
+        </div>
+
+        <button class="auto-play-toggle" id="autoPlayToggle" title="Jeda / Lanjutkan Auto Slide">
+          <svg class="play-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <svg class="pause-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          <span class="ap-text" id="autoPlayText">Auto Slide: On</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dynamic Contextual Details Container (Synced with active slide) -->
+    <div class="slide-details-container" id="slideDetailsBox">
+      <!-- Populated dynamically by JavaScript -->
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FEATURE PILLARS                                                           -->
+  <!-- ========================================================================= -->
+  <section class="features-section container" id="features">
+    <div class="section-header text-center">
+      <span class="section-tag">FITUR UNGGULAN KELAS DUNIA</span>
+      <h2 class="section-title">Semua yang Dibutuhkan Web Developer dalam Satu Aplikasi Native</h2>
+      <p class="section-desc">
+        Tidak perlu lagi menginstal aplikasi terpisah untuk server, database GUI, dan PHP switcher. SuryaDev mengintegrasikan segalanya dalam satu kesatuan arsitektur yang sangat responsif.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Feature 1: Auto Virtual Host -->
+      <div class="feature-card" id="autovhost">
+        <div class="f-icon-box bg-blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 class="f-title">Laragon-Style Auto Virtual Host (Zero Config)</h3>
+        <p class="f-text">
+          Cukup pindahkan folder proyek Anda (Laravel, WordPress, Symfony, PHP) ke <code>C:\SuryaDev\www\</code>. SuryaDev otomatis mendeteksi framework, menyetel document root ke <code>/public</code>, membuatkan domain lokal <code>http://proyek.test</code>, mendaftarkannya ke Windows hosts, dan merefresh Nginx seketika.
+        </p>
+        <div class="f-badge">Auto Directory Watcher</div>
+      </div>
+
+      <!-- Feature 2: Integrated Database Studio -->
+      <div class="feature-card" id="database">
+        <div class="f-icon-box bg-cyan">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3 class="f-title">Visual Database Workspace Terintegrasi</h3>
+        <p class="f-text">
+          Tinggalkan phpMyAdmin yang lemot! SuryaDev memiliki Database Management bawaan: Table Designer, Advanced Data Editor (CRUD inline), SQL Editor dengan autocomplete, Visual Query Builder, hingga Visual Relationship Designer & ERD Diagram bergaya Class Diagram dengan mode fullscreen!
+        </p>
+        <div class="f-badge">MySQL • Postgres • SQLite</div>
+      </div>
+
+      <!-- Feature 3: Multi-Runtime Switching -->
+      <div class="feature-card">
+        <div class="f-icon-box bg-purple">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3 class="f-title">Multi-Runtime & PHP Switcher 1-Klik</h3>
+        <p class="f-text">
+          Beralih antar versi PHP (PHP 8.1, 8.2, 8.3, 8.4) tanpa pusing konflik konfigurasi. Dilengkapi pengelola ekstensi PHP otomatis, pengatur memori dan upload limit, serta switch web server antara Nginx dan Apache secara fleksibel.
+        </p>
+        <div class="f-badge">PHP 8.1 - 8.4 • Nginx • Apache</div>
+      </div>
+
+      <!-- Feature 4: Windows Defender Accelerator -->
+      <div class="feature-card">
+        <div class="f-icon-box bg-emerald">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="f-title">Windows Defender Accelerator (3x - 10x Lebih Cepat)</h3>
+        <p class="f-text">
+          Framework modern seperti Laravel memiliki ribuan file di <code>vendor/</code> dan <code>node_modules</code> yang diperiksa berulang-ulang oleh antivirus Windows Defender. Dengan fitur 1-klik Exclusion SuryaDev, pemindaian real-time dilewati dan response time website melonjak drastis!
+        </p>
+        <div class="f-badge">1-Click UAC Automation</div>
+      </div>
+
+      <!-- Feature 5: Boot & Auto-Start Orchestration -->
+      <div class="feature-card">
+        <div class="f-icon-box bg-amber">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+        </div>
+        <h3 class="f-title">Windows Boot & Auto-Start Background</h3>
+        <p class="f-text">
+          Nyalakan PC Anda dan langsung mulai koding! Cukup centang opsi <em>"Start All Otomatis ketika PC nyala"</em> di menu Settings, SuryaDev akan otomatis mengorkestrasi seluruh service web dan database di latar belakang saat Windows pertama kali booting.
+        </p>
+        <div class="f-badge">Zero Friction Startup</div>
+      </div>
+
+      <!-- Feature 6: Ultra Lightweight & Portable -->
+      <div class="feature-card">
+        <div class="f-icon-box bg-rose">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        </div>
+        <h3 class="f-title">Super Ringan, Hemat RAM & Portable</h3>
+        <p class="f-text">
+          Dibangun dengan <strong>Rust</strong> murni (bukan Electron yang rakus memori 500 MB!). Ukuran installer installer hanya <strong>8.6 MB</strong>. SuryaDev dapat dijalankan secara portable di Flashdisk atau dipasang permanen di drive C:\ dengan performa maksimal.
+        </p>
+        <div class="f-badge">Installer ~8.6 MB • Rust Engine</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- DATABASE WORKSPACE DEEP DIVE                                              -->
+  <!-- ========================================================================= -->
+  <section class="database-deepdive container">
+    <div class="deepdive-wrapper">
+      <div class="deepdive-content">
+        <span class="section-tag">BUILT-IN DATABASE STUDIO</span>
+        <h2 class="deepdive-title">Visual Relationship Designer & ERD Berkelas</h2>
+        <p class="deepdive-desc">
+          SuryaDev menghadirkan perancang relasi database visual layaknya Class Diagram. Anda dapat melihat garis relasi Foreign Key antar tabel, mengedit skema kolom, mengeksekusi query SQL dengan syntax highlighting, melakukan filter data inline, hingga export dan backup database dalam hitungan detik.
+        </p>
+
+        <ul class="deepdive-list">
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>ERD Generator Visual:</strong> Garis relasi otomatis dengan mode Fullscreen interaktif.</span>
+          </li>
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Advanced Data Editor:</strong> Edit baris data, pagination cerdas, dan pencarian cepat.</span>
+          </li>
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>SQL Query Runner:</strong> Eksekusi multi-query aman tanpa memblokir antarmuka desktop.</span>
+          </li>
+          <li>
+            <svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Backup & Restore 1-Klik:</strong> Simpan snapshot skema dan data langsung ke disk lokal.</span>
+          </li>
+        </ul>
+
+        <div class="deepdive-btn">
+          <a href="#download" class="btn btn-primary">Coba Database Studio SuryaDev</a>
+        </div>
+      </div>
+
+      <div class="deepdive-visual">
+        <div class="erd-mockup-card">
+          <div class="erd-mockup-header">
+            <span class="erd-badge">ERD Relationship Designer</span>
+            <span class="erd-mode">Fullscreen Supported</span>
+          </div>
+
+          <div class="erd-canvas">
+            <!-- Table 1: Users -->
+            <div class="erd-table table-users">
+              <div class="table-head">users</div>
+              <div class="table-fields">
+                <div class="field pk">🔑 id <small>INT AUTO_INC</small></div>
+                <div class="field">name <small>VARCHAR(255)</small></div>
+                <div class="field">email <small>VARCHAR(255)</small></div>
+                <div class="field">created_at <small>TIMESTAMP</small></div>
+              </div>
+            </div>
+
+            <!-- SVG Connecting Relationship Line -->
+            <svg class="erd-svg-connector" viewBox="0 0 200 120">
+              <path d="M 0 45 C 100 45, 100 80, 200 80" fill="none" stroke="var(--cyan-glow)" stroke-width="2" stroke-dasharray="4,4"/>
+              <circle cx="200" cy="80" r="4" fill="var(--cyan-glow)"/>
+              <circle cx="0" cy="45" r="4" fill="var(--cyan-glow)"/>
+            </svg>
+
+            <!-- Table 2: Orders -->
+            <div class="erd-table table-orders">
+              <div class="table-head">orders</div>
+              <div class="table-fields">
+                <div class="field pk">🔑 id <small>INT AUTO_INC</small></div>
+                <div class="field fk">🔗 user_id <small>INT (FK)</small></div>
+                <div class="field">total_amount <small>DECIMAL</small></div>
+                <div class="field">status <small>ENUM</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- COMPARISON TABLE                                                          -->
+  <!-- ========================================================================= -->
+  <section class="comparison-section container" id="comparison">
+    <div class="section-header text-center">
+      <span class="section-tag">HEAD-TO-HEAD COMPARISON</span>
+      <h2 class="section-title">Mengapa SuryaDev Jauh Lebih Unggul?</h2>
+      <p class="section-desc">
+        Bandingkan SuryaDev secara langsung dengan server stack konvensional yang biasa Anda gunakan.
+      </p>
+    </div>
+
+    <div class="table-container">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th class="col-feature">Fitur & Arsitektur</th>
+            <th class="col-suryadev highlight-col">SuryaDev (v0.1.2)</th>
+            <th class="col-other">Laragon</th>
+            <th class="col-other">XAMPP</th>
+            <th class="col-other">Laravel Herd</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-name">Core Engine & Backend</td>
+            <td class="highlight-col"><span class="badge-win">Native Rust + Tauri 2</span></td>
+            <td>C++ / Delphi (Old GUI)</td>
+            <td>C / Perl (Apache Friends)</td>
+            <td>Electron / Native</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Ukuran Installer</td>
+            <td class="highlight-col font-bold text-cyan">~8.6 MB (Super Compact)</td>
+            <td>~40 - 150 MB</td>
+            <td>~160 MB</td>
+            <td>~120 MB</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Auto Virtual Host (.test)</td>
+            <td class="highlight-col text-emerald">✅ Otomatis (Live Watcher)</td>
+            <td>✅ Otomatis</td>
+            <td>❌ Manual Edit File</td>
+            <td>✅ Otomatis</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Auto Document Root Laravel (/public)</td>
+            <td class="highlight-col text-emerald">✅ Otomatis Terdeteksi</td>
+            <td>⚠️ Sering perlu disetel</td>
+            <td>❌ Harus manual vhost</td>
+            <td>✅ Otomatis</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Database Studio Terintegrasi</td>
+            <td class="highlight-col text-emerald">✅ ERD, Visual Query & Editor</td>
+            <td>❌ Buka HeidiSQL Terpisah</td>
+            <td>❌ Buka phpMyAdmin Web</td>
+            <td>⚠️ Perlu aplikasi tambahan</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Windows Defender Accelerator</td>
+            <td class="highlight-col text-emerald">✅ Otomatis 1-Klik UAC</td>
+            <td>❌ Manual</td>
+            <td>❌ Tidak Ada</td>
+            <td>⚠️ Terbatas</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Multi-Database Server</td>
+            <td class="highlight-col text-emerald">✅ MySQL, Postgres, Redis, SQLite</td>
+            <td>⚠️ MySQL saja (bawaan)</td>
+            <td>⚠️ MariaDB saja</td>
+            <td>⚠️ Dibatasi versi Pro</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Mode Light & Dark Mode</td>
+            <td class="highlight-col text-emerald">✅ High-Contrast Keduanya</td>
+            <td>❌ Tampilan Klasik Windows</td>
+            <td>❌ Tampilan Putih Kaku</td>
+            <td>✅ Ada</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Biaya & Lisensi</td>
+            <td class="highlight-col font-bold text-cyan">100% Free & Open Developer</td>
+            <td>Gratis</td>
+            <td>Gratis</td>
+            <td>Berbayar (Fitur Pro)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- HOW IT WORKS (3 EASY STEPS)                                               -->
+  <!-- ========================================================================= -->
+  <section class="steps-section container">
+    <div class="section-header text-center">
+      <span class="section-tag">CARA PAKAI INSTAN</span>
+      <h2 class="section-title">Hanya 3 Langkah untuk Memulai</h2>
+      <p class="section-desc">Tanpa konfigurasi rumit. Tanpa edit file konfigurasi manual.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Download & Install</h3>
+        <p class="step-desc">
+          Unduh file setup installer SuryaDev untuk Windows 64-bit dan jalankan wizard instalasi dalam beberapa detik.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Taruh Folder Proyek</h3>
+        <p class="step-desc">
+          Pindahkan atau copy folder proyek Anda (misal: <code>my-laravel</code>) langsung ke dalam folder <code>C:\SuryaDev\www\</code>.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Buka di Browser!</h3>
+        <p class="step-desc">
+          Langsung akses <code>http://my-laravel.test</code> di browser Anda. Virtual Host, Nginx, dan PHP langsung aktif seketika!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- DOWNLOAD SECTION                                                          -->
+  <!-- ========================================================================= -->
+  <section class="download-section container" id="download">
+    <div class="download-card">
+      <div class="download-badge">Official Release Build</div>
+      <h2 class="download-title">Download SuryaDev untuk Windows</h2>
+      <p class="download-subtitle">
+        Tingkatkan produktivitas pengembangan web Anda hari ini dengan aplikasi lokal server paling modern.
+      </p>
+
+      <div class="download-box">
+        <div class="file-info-row">
+          <div class="fi-item">
+            <span class="fi-label">Versi Rilis</span>
+            <span class="fi-val">v0.1.2 Stable</span>
+          </div>
+          <div class="fi-item">
+            <span class="fi-label">Target OS</span>
+            <span class="fi-val">Windows 10 / 11 (64-bit)</span>
+          </div>
+          <div class="fi-item">
+            <span class="fi-label">Ukuran Setup</span>
+            <span class="fi-val">~8.62 MiB</span>
+          </div>
+          <div class="fi-item">
+            <span class="fi-label">Tipe Paket</span>
+            <span class="fi-val">NSIS Setup Installer</span>
+          </div>
+        </div>
+
+        <div class="download-action">
+          <a href="SuryaDev_0.1.2_x64-setup.exe" class="btn btn-download-huge download-trigger" download>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.802"/></svg>
+            <div class="dh-text">
+              <strong>Download SuryaDev Setup (64-bit)</strong>
+              <small>Klik untuk langsung mengunduh file SuryaDev_0.1.2_x64-setup.exe</small>
+            </div>
+          </a>
+        </div>
+
+        <div class="download-checksum">
+          <span class="cs-label">Installer SHA-256 Verified:</span>
+          <code class="cs-hash" id="checksumText">SuryaDev_0.1.2_x64-setup.exe • Official Signature Included</code>
+          <button class="btn-copy" id="copyChecksumBtn" title="Salin Nama File">Salin</button>
+        </div>
+      </div>
+
+      <div class="system-reqs">
+        <strong>Spesifikasi Minimum:</strong> Windows 10/11 64-bit &bull; RAM 4 GB (Disarankan 8 GB) &bull; Ruang Disk Bebas 500 MB &bull; Hak Administrator untuk konfigurasi Hosts/Defender awal.
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- ABOUT CREATOR                                                             -->
+  <!-- ========================================================================= -->
+  <section class="about-section container" id="about">
+    <div class="about-card">
+      <div class="about-avatar-col">
+        <div class="avatar-circle">
+          <img src="assets/logo.png" alt="Surya Wana Bakti">
+        </div>
+        <div class="creator-badge">Lead Developer</div>
+      </div>
+
+      <div class="about-info-col">
+        <span class="section-tag">ENGINEER & ARCHITECT</span>
+        <h2 class="creator-name">Surya Wana Bakti</h2>
+        <p class="creator-role">Full Stack Web & Mobile Developer</p>
+
+        <p class="creator-bio">
+          Full Stack Web Developer dengan 4 tahun pengalaman membangun aplikasi web dan mobile enterprise menggunakan React.js, Laravel, React Native, Rust, dan Python. Terbiasa bekerja kolaboratif dalam tim, memiliki kemampuan analitis serta pemecahan masalah yang kuat. Dikenal mampu mengembangkan aplikasi dengan cepat dalam waktu singkat tanpa mengorbankan kualitas arsitektur.
+        </p>
+
+        <div class="skills-chips">
+          <span class="schip">React.js</span>
+          <span class="schip">TypeScript</span>
+          <span class="schip">Laravel</span>
+          <span class="schip">Rust</span>
+          <span class="schip">TailwindCSS</span>
+          <span class="schip">React Native</span>
+          <span class="schip">Node.js</span>
+          <span class="schip">MySQL / PostgreSQL</span>
+        </div>
+
+        <div class="contact-links">
+          <a href="https://github.com/suryawanabakti" target="_blank" rel="noopener" class="clink">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>github.com/suryawanabakti</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/surya-wana-bakti-866a85223" target="_blank" rel="noopener" class="clink">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+
+          <a href="mailto:suryawanabakti18@gmail.com" class="clink">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>suryawanabakti18@gmail.com</span>
+          </a>
+
+          <div class="clink tel-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+62 851-8302-8432</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER                                                                    -->
+  <!-- ========================================================================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <div class="f-brand">
+          <img src="assets/logo.png" alt="Logo" class="f-logo">
+          <strong>SuryaDev</strong>
+        </div>
+        <p class="f-desc">
+          Modern Local Web Server & Database Management Suite for Windows Developers.
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Navigasi</h4>
+        <a href="#showcase">Tampilan Aplikasi</a>
+        <a href="#features">Fitur Utama</a>
+        <a href="#database">Database Studio</a>
+        <a href="#autovhost">Auto Virtual Host</a>
+        <a href="#comparison">Perbandingan</a>
+        <a href="#download">Download Setup</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Teknologi</h4>
+        <span>Rust Core Engine</span>
+        <span>Tauri 2 Framework</span>
+        <span>React 18 & TypeScript</span>
+        <span>Tailwind CSS</span>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Komunitas & Kontak</h4>
+        <a href="https://github.com/suryawanabakti" target="_blank" rel="noopener">GitHub Profil</a>
+        <a href="https://www.linkedin.com/in/surya-wana-bakti-866a85223" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:suryawanabakti18@gmail.com">Kirim Email</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <div class="copy-text">
+        &copy; 2026 SuryaDev. Designed & Engineered by <strong>Surya Wana Bakti</strong>. All rights reserved.
+      </div>
+      <div class="footer-badge">
+        Built with Precision &bull; Windows Native Performance
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- LIGHTBOX MODAL FOR HIGH-RES SLIDES                                        -->
+  <!-- ========================================================================= -->
+  <div class="screenshot-modal" id="screenshotModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <img src="assets/logo.png" alt="SuryaDev" class="modal-logo">
+          <span class="modal-caption" id="modalCaption">SuryaDev High-Resolution Preview</span>
+        </div>
+        <div class="modal-header-actions">
+          <span class="modal-index-badge" id="modalIndexBadge">1 / 5</span>
+          <button class="modal-close" id="modalCloseBtn" aria-label="Tutup Preview (Esc)" title="Tutup (Esc)">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <button class="modal-arrow modal-prev" id="modalPrevBtn" aria-label="Gambar Sebelumnya">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="modal-img-container">
+          <img src="assets/slide1.png" alt="SuryaDev High-Res Screenshot" id="modalImg" class="modal-full-img">
+        </div>
+        <button class="modal-arrow modal-next" id="modalNextBtn" aria-label="Gambar Selanjutnya">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <span class="modal-hint">Tip: Gunakan tombol panah kiri / kanan keyboard untuk berpindah slide, atau tombol ESC untuk keluar</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

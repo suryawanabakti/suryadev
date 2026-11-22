@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="phpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#777BB4"/>
+      <stop offset="100%" stop-color="#4F5B93"/>
+    </linearGradient>
+  </defs>
+  <!-- PHP Classic Oval -->
+  <ellipse cx="64" cy="64" rx="58" ry="34" fill="url(#phpGrad)"/>
+  <!-- "php" Text -->
+  <g fill="#FFFFFF" transform="matrix(1 0 -0.2 1 12 0)">
+    <!-- First 'p' -->
+    <path d="M26 48h13c7.5 0 12 3.5 12 9.5s-4.5 9.5-12 9.5h-5.5v13H26V48zm7.5 13.5H39c3.5 0 5-1.5 5-4s-1.5-4-5-4h-5.5v8z"/>
+    <!-- 'h' -->
+    <path d="M56 38h7.5v15.5c2-2.5 5.5-4 9-4 6.5 0 10.5 4 10.5 10.5V80h-7.5V61c0-3.5-2-5.5-5.5-5.5-3.5 0-6.5 2-6.5 6v18.5H56V38z"/>
+    <!-- Second 'p' -->
+    <path d="M88 48h13c7.5 0 12 3.5 12 9.5s-4.5 9.5-12 9.5h-5.5v13H88V48zm7.5 13.5h5.5c3.5 0 5-1.5 5-4s-1.5-4-5-4h-5.5v8z"/>
+  </g>
+</svg>
