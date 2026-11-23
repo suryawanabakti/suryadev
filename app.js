@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (copyBtn && checksumText) {
     copyBtn.addEventListener("click", () => {
-      const textToCopy = "SuryaDev_0.1.2_x64-setup.exe";
+      const textToCopy = "SuryaDev_0.1.3_x64-setup.exe";
       navigator.clipboard.writeText(textToCopy).then(() => {
         const originalText = copyBtn.textContent;
         copyBtn.textContent = "Tersalin!";
@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <h3 class="sd-title">${data.headline}</h3>
               <p class="sd-desc">${data.desc}</p>
               <div class="sd-cta-wrap">
-                <a href="#download" class="btn btn-primary">Unduh SuryaDev v0.1.2</a>
+                <a href="#download" class="btn btn-primary">Unduh SuryaDev v0.1.3</a>
                 <button class="btn btn-secondary trigger-zoom-direct" data-index="${currentSlide}">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
                   <span>Zoom Screenshot</span>
@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadBtns = document.querySelectorAll(".download-trigger");
   downloadBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      showToast("Sedang mengunduh SuryaDev_0.1.2_x64-setup.exe...");
+      showToast("Sedang mengunduh SuryaDev_0.1.3_x64-setup.exe...");
     });
   });
 
