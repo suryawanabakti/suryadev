@@ -4,59 +4,59 @@
 /* ========================================================================= */
 
 :root {
-  /* Color Palette - Dark Mode Default */
-  --bg-primary: #060b18;
-  --bg-secondary: #0c1630;
-  --bg-card: rgba(12, 22, 48, 0.7);
-  --bg-card-hover: rgba(18, 32, 68, 0.85);
-  --border-color: rgba(30, 58, 110, 0.4);
-  --border-glow: rgba(6, 182, 212, 0.35);
+  /* Color Palette - Default Light Mode */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: #ffffff;
+  --border-color: #e2e8f0;
+  --border-glow: rgba(220, 38, 38, 0.35);
 
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
+  --text-main: #09090b;
+  --text-muted: #52525b;
+  --text-subtle: #71717a;
 
-  --cyan-glow: #06b6d4;
-  --cyan-bright: #38bdf8;
-  --blue-primary: #2563eb;
-  --blue-glow: #3b82f6;
+  --cyan-glow: #dc2626;
+  --cyan-bright: #b91c1c;
+  --blue-primary: #dc2626;
+  --blue-glow: #ef4444;
+  --emerald-val: #059669;
+  --purple-val: #7c3aed;
+  --amber-val: #d97706;
+  --rose-val: #dc2626;
+
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(220, 38, 38, 0.15);
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Mode Overrides - Pitch Black & Crimson Red */
+html[data-theme="dark"] {
+  --bg-primary: #09090b;
+  --bg-secondary: #121215;
+  --bg-card: rgba(18, 18, 21, 0.8);
+  --bg-card-hover: rgba(24, 24, 27, 0.95);
+  --border-color: rgba(39, 39, 42, 0.6);
+  --border-glow: rgba(239, 68, 68, 0.35);
+
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --text-subtle: #71717a;
+
+  --cyan-glow: #ef4444;
+  --cyan-bright: #f87171;
+  --blue-primary: #dc2626;
+  --blue-glow: #ef4444;
   --emerald-val: #10b981;
   --purple-val: #a855f7;
   --amber-val: #f59e0b;
   --rose-val: #f43f5e;
 
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 25px rgba(6, 182, 212, 0.25);
-  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Light Mode Overrides */
-html[data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --bg-card-hover: #ffffff;
-  --border-color: #cbd5e1;
-  --border-glow: rgba(2, 132, 199, 0.4);
-
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --text-subtle: #64748b;
-
-  --cyan-glow: #0284c7;
-  --cyan-bright: #0369a1;
-  --blue-primary: #1d4ed8;
-  --blue-glow: #2563eb;
-  --emerald-val: #047857;
-  --purple-val: #7e22ce;
-  --amber-val: #b45309;
-  --rose-val: #be123c;
-
-  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 20px rgba(2, 132, 199, 0.15);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 25px rgba(239, 68, 68, 0.25);
 }
 
 /* Base Reset & Typography */

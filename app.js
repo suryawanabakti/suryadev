@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("themeToggle");
   const htmlElement = document.documentElement;
 
-  const savedTheme = localStorage.getItem("suryadev_landing_theme") || "dark";
+  const savedTheme = localStorage.getItem("suryadev_landing_theme") || "light";
   htmlElement.setAttribute("data-theme", savedTheme);
 
   if (themeToggle) {
