@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (copyBtn && checksumText) {
     copyBtn.addEventListener("click", () => {
-      const textToCopy = "SuryaDev_0.1.3_x64-setup.exe";
+      const textToCopy = checksumText.textContent.trim();
       navigator.clipboard.writeText(textToCopy).then(() => {
         const originalText = copyBtn.textContent;
         copyBtn.textContent = "Tersalin!";
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
       features: [
         {
           title: "1-Klik Start / Stop / Restart",
-          desc: "Jalankan PHP 8.4, MySQL 8.4, dan Nginx secara serentak atau kendalikan proses masing-masing tanpa mematikan service lainnya."
+          desc: "Jalankan PHP 8.2 sampai 8.5, MySQL 8.4, dan Nginx secara serentak atau kendalikan proses masing-masing tanpa mematikan service lainnya."
         },
         {
           title: "Port 80 Ready & Direktori www",
@@ -92,6 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           title: "Dukungan Multi-Service Siap Unduh",
           desc: "Redis (:6379), PostgreSQL (:5432), dan Apache (:8080) siap diunduh dan dipasang langsung dari menu Runtimes."
+        },
+        {
+          title: "Command Palette Ctrl+K",
+          desc: "Lompat ke halaman, mulai atau hentikan service, dan buka utilitas dari satu panel keyboard."
         }
       ]
     },
@@ -173,6 +177,14 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           title: "JSON Formatter & Validator",
           desc: "Rapikan struktur output API yang berantakan dan validasi error syntax JSON dalam hitungan milidetik."
+        },
+        {
+          title: "Screenshot Studio",
+          desc: "Tekan Ctrl+PrintScreen untuk menangkap area layar, lalu tambahkan anotasi, blur, atau penanda bernomor sebelum disalin atau disimpan."
+        },
+        {
+          title: "Color Picker & Contrast",
+          desc: "Ambil warna dari layar dengan Ctrl+Alt+C, ubah ke HEX, RGBA, atau OKLCH, dan periksa rasio kontras WCAG."
         }
       ]
     },
@@ -186,8 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
       caption: "PHP Version Manager: Isolasi FastCGI Port 9000 & Sakelar 40+ Modul Ekstensi Resmi",
       features: [
         {
-          title: "PHP 8.4.27 FastCGI Terisolasi",
-          desc: "Berjalan pada Port 9000 dengan Active CLI yang otomatis dihubungkan ke Nginx dan Apache secara mulus."
+          title: "PHP 8.2 - 8.5 FastCGI Terisolasi",
+          desc: "Setiap versi berjalan di port FastCGI sendiri, mulai dari 9000, dan langsung terhubung ke Nginx atau Apache."
         },
         {
           title: "Toggle 40+ Modul Ekstensi Resmi",
@@ -300,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <h3 class="sd-title">${data.headline}</h3>
               <p class="sd-desc">${data.desc}</p>
               <div class="sd-cta-wrap">
-                <a href="#download" class="btn btn-primary">Unduh SuryaDev v0.1.3</a>
+                <a href="#download" class="btn btn-primary">Unduh SuryaDev v0.1.5</a>
                 <button class="btn btn-secondary trigger-zoom-direct" data-index="${currentSlide}">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
                   <span>Zoom Screenshot</span>
@@ -506,7 +518,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadBtns = document.querySelectorAll(".download-trigger");
   downloadBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      showToast("Sedang mengunduh SuryaDev_0.1.3_x64-setup.exe...");
+      showToast("Sedang mengunduh SuryaDev_0.1.5_x64-setup.exe...");
     });
   });
 
